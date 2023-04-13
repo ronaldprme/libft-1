@@ -6,7 +6,7 @@
 /*   By: tiagoliv <tiagoliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 14:32:44 by tiagoliv          #+#    #+#             */
-/*   Updated: 2023/04/13 23:11:00 by tiagoliv         ###   ########.fr       */
+/*   Updated: 2023/04/13 23:16:49 by tiagoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ char	*ft_strdup(const char *s)
 	if (d == NULL)
 		return (NULL);
 	while (s[c])
-		d[c] = s[c++];
+	{
+		d[c] = s[c];
+		c++;
+	}
 	return (d);
 }
