@@ -6,7 +6,7 @@
 /*   By: tiagoliv <tiagoliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 14:32:29 by tiagoliv          #+#    #+#             */
-/*   Updated: 2023/04/13 22:42:26 by tiagoliv         ###   ########.fr       */
+/*   Updated: 2023/04/13 23:08:04 by tiagoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	d = 0;
 	str = dest;
 	sr = (char *)src;
-
-
 	while (d < n)
 	{
 		str[d] = sr[d];

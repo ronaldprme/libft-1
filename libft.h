@@ -6,13 +6,12 @@
 /*   By: tiagoliv <tiagoliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 22:21:47 by tiagoliv          #+#    #+#             */
-/*   Updated: 2023/04/13 22:26:54 by tiagoliv         ###   ########.fr       */
+/*   Updated: 2023/04/13 23:09:59 by tiagoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	LIBFT
-
-# define LIBFT
+#ifndef LIBFT_H
+# define LIBFT_H
 
 # include	<stdio.h>
 # include	<stdlib.h>
@@ -43,6 +42,5 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
-
 
 #endif

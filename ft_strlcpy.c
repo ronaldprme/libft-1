@@ -6,7 +6,7 @@
 /*   By: tiagoliv <tiagoliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 14:32:52 by tiagoliv          #+#    #+#             */
-/*   Updated: 2023/04/13 22:53:11 by tiagoliv         ###   ########.fr       */
+/*   Updated: 2023/04/13 23:09:29 by tiagoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,9 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	while (c < l)
 	{
 		if (c >= t)
-		{
 			dst[c] = '\0';
-		}
 		else
-		{
 			dst[c] = src[c];
-		}
 		c++;
 	}
 	return (l);

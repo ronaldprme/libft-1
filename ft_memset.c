@@ -6,7 +6,7 @@
 /*   By: tiagoliv <tiagoliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 14:32:32 by tiagoliv          #+#    #+#             */
-/*   Updated: 2023/04/13 22:48:38 by tiagoliv         ###   ########.fr       */
+/*   Updated: 2023/04/13 23:09:12 by tiagoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,7 @@ void	*ft_memset(void *s, int c, size_t n)
 
 	d = 0;
 	str = s;
-
 	while (d < n)
-	{
-		str[d] = c;
-		d++;
-	}
+		str[d++] = c;
 	return (s);
 }

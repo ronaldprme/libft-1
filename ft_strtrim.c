@@ -6,7 +6,7 @@
 /*   By: tiagoliv <tiagoliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 14:33:01 by tiagoliv          #+#    #+#             */
-/*   Updated: 2023/04/13 22:21:09 by tiagoliv         ###   ########.fr       */
+/*   Updated: 2023/04/13 23:07:04 by tiagoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,10 @@ int	charinstr(const char *s, char c)
 	int	d;
 
 	d = 0;
-
 	if (s == NULL)
 		return (0);
 	while (s[d] && s[d++] != c)
 		;
-
 	return (s[d] != '\0');
 }
 
@@ -36,7 +34,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	c = 0;
 	st = 0;
 	en = 0;
-
 	while (s1[c] && charinstr(set, s1[c++]))
 		;
 	st = --c;
