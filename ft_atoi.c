@@ -1,10 +1,29 @@
-int ft_atoi(const char *nptr) {
-    int r = 0;
-    while (*nptr) {
-        if (ft_isdigit(*nptr)) {
-            r = r*10 + (*nptr - '0');
-        }
-        nptr++;
-    }
-    return r;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tiagoliv <tiagoliv@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/13 14:32:05 by tiagoliv          #+#    #+#             */
+/*   Updated: 2023/04/13 22:30:41 by tiagoliv         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+int	ft_atoi(const char *nptr)
+{
+	int	r;
+
+	r = 0;
+	while (*nptr)
+	{
+		if (ft_isdigit(*nptr))
+		{
+			r = r * 10 + (*nptr - '0');
+		}
+		nptr++;
+	}
+	return (r);
 }

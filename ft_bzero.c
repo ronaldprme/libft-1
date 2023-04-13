@@ -1,12 +1,27 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tiagoliv <tiagoliv@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/13 14:32:12 by tiagoliv          #+#    #+#             */
+/*   Updated: 2023/04/13 22:30:48 by tiagoliv         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void ft_bzero(void *s, size_t n) {
-    int d = 0;
-    char *str = s;
+#include "libft.h"
 
-    while (d < n) {
-        str[d] = '\0';
-        d++;
-    }
-    return s;
+void	ft_bzero(void *s, size_t n)
+{
+	size_t	d;
+	char	*str;
+
+	d = 0;
+	str = s;
+	while (d < n)
+	{
+		str[d] = '\0';
+		d++;
+	}
 }

@@ -1,9 +1,26 @@
-char *ft_strrchr(const char *s, int c) {
-    int d = 0;
-    while (*s) {
-        if (*s == c)
-            d = *s;
-        s++;
-    }
-    return d;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tiagoliv <tiagoliv@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/13 14:32:59 by tiagoliv          #+#    #+#             */
+/*   Updated: 2023/04/13 22:54:52 by tiagoliv         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+char	*ft_strrchr(const char *s, int c)
+{
+	char	*d;
+
+	while (*s)
+	{
+		if (*s == c)
+			d = (char *)s;
+		s++;
+	}
+	return (d);
 }
