@@ -6,13 +6,11 @@
 /*   By: tiagoliv <tiagoliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 14:32:50 by tiagoliv          #+#    #+#             */
-/*   Updated: 2023/04/13 23:07:18 by tiagoliv         ###   ########.fr       */
+/*   Updated: 2023/04/14 00:41:57 by tiagoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-size_t	ft_strlen(const char *src);
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

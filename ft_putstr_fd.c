@@ -6,8 +6,13 @@
 /*   By: tiagoliv <tiagoliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 14:32:38 by tiagoliv          #+#    #+#             */
-/*   Updated: 2023/04/13 22:49:28 by tiagoliv         ###   ########.fr       */
+/*   Updated: 2023/04/14 00:38:33 by tiagoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+void	ft_putstr_fd(char *s, int fd)
+{
+	write(fd, s, ft_strlen(s));
+}

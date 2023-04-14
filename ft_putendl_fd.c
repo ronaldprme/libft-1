@@ -6,8 +6,14 @@
 /*   By: tiagoliv <tiagoliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 14:32:35 by tiagoliv          #+#    #+#             */
-/*   Updated: 2023/04/13 22:49:20 by tiagoliv         ###   ########.fr       */
+/*   Updated: 2023/04/14 00:34:11 by tiagoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+void	ft_putendl_fd(char *s, int fd)
+{
+	ft_putstr_fd(s, fd);
+	write(fd, "\n", 1);
+}

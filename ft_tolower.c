@@ -6,13 +6,13 @@
 /*   By: tiagoliv <tiagoliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 14:33:04 by tiagoliv          #+#    #+#             */
-/*   Updated: 2023/04/13 22:57:38 by tiagoliv         ###   ########.fr       */
+/*   Updated: 2023/04/14 00:40:29 by tiagoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+int	ft_tolower(int c)
 {
 	if (65 <= c && c <= 90)
 		return (c + 32);

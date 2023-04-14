@@ -6,7 +6,7 @@
 /*   By: tiagoliv <tiagoliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 14:32:13 by tiagoliv          #+#    #+#             */
-/*   Updated: 2023/04/13 23:08:55 by tiagoliv         ###   ########.fr       */
+/*   Updated: 2023/04/14 01:47:34 by tiagoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,5 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	if ((unsigned long)(nmemb * size) != ((long)nmemb) * size)
 		return (NULL);
 	v = malloc(nmemb * size);
-	if (v == NULL)
-		return (NULL);
 	return (v);
 }

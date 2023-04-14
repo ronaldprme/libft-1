@@ -6,13 +6,13 @@
 /*   By: tiagoliv <tiagoliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 14:33:01 by tiagoliv          #+#    #+#             */
-/*   Updated: 2023/04/13 23:07:04 by tiagoliv         ###   ########.fr       */
+/*   Updated: 2023/04/14 01:48:03 by tiagoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	charinstr(const char *s, char c)
+static int	charinstr(const char *s, char c)
 {
 	int	d;
 

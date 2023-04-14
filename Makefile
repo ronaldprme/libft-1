@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: tiagoliv <tiagoliv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/10/31 13:28:54 by tiago             #+#    #+#              #
-#    Updated: 2023/04/13 23:17:22 by tiagoliv         ###   ########.fr        #
+#    Created: 2022/10/31 13:28:54 by tiagoliv          #+#    #+#              #
+#    Updated: 2023/04/14 01:48:16 by tiagoliv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,7 @@ fclean:	clean
 
 re:	fclean $(NAME)
 
-bonus: $(OBJS) $(BONUS_OBJS)
-		ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+bonus: $(OBJS) 
+		ar rcs $(NAME) $(OBJS) 
 
 .PHONY:			all clean fclean re bonus

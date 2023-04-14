@@ -6,7 +6,7 @@
 /*   By: tiagoliv <tiagoliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 14:32:05 by tiagoliv          #+#    #+#             */
-/*   Updated: 2023/04/13 22:30:41 by tiagoliv         ###   ########.fr       */
+/*   Updated: 2023/04/14 02:16:40 by tiagoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,26 @@
 
 int	ft_atoi(const char *nptr)
 {
-	int	r;
+	int		r;
+	int		s;
+	char	*d;
 
+	d = (char *) nptr;
 	r = 0;
-	while (*nptr)
+	s = 1;
+	while (*d == ' ' || *d == '\n' || *d == '\t' || *d == '\v'
+		|| *d == '\f' || *d == '\r')
+		d++;
+	if (*d == '-' || *d == '+')
 	{
-		if (ft_isdigit(*nptr))
-		{
-			r = r * 10 + (*nptr - '0');
-		}
-		nptr++;
+		if (*d == '-')
+			s = -1;
+		d++;
 	}
-	return (r);
+	while (*d >= '0' && *d <= '9')
+	{
+		r = r * 10 + *d - '0';
+		d++;
+	}
+	return (r * s);
 }

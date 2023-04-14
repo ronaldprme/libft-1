@@ -6,7 +6,7 @@
 /*   By: tiagoliv <tiagoliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 14:32:40 by tiagoliv          #+#    #+#             */
-/*   Updated: 2023/04/13 23:20:57 by tiagoliv         ###   ########.fr       */
+/*   Updated: 2023/04/14 02:16:12 by tiagoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,12 @@ char	*nextsubstr(const char *s, char c, int start)
 	char	*ss;
 
 	d = start;
-	ss = malloc(ft_strlen(s) * sizeof(char));
-	if (ss == NULL)
-		return (NULL);
+	ss = malloc(1);
 	while (s[d] && s[d] != c)
 	{
+		ss = realloc(ss, (d - start + 1) * sizeof(char));
+		if (ss == NULL)
+			return (NULL);
 		ss[d - start] = s[d];
 		d++;
 	}
