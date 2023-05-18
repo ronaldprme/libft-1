@@ -6,7 +6,7 @@
 /*   By: tiagoliv <tiagoliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 14:32:56 by tiagoliv          #+#    #+#             */
-/*   Updated: 2023/04/14 02:45:07 by tiagoliv         ###   ########.fr       */
+/*   Updated: 2023/05/04 13:10:47 by tiagoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,17 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*r;
 	int		c;
 
-	r = malloc(ft_strlen(s) * sizeof(char));
-	if (s == NULL)
+	if (!s)
+		return (NULL);
+	r = malloc((ft_strlen(s) + 1) * sizeof(char));
+	if (r == NULL)
 		return (NULL);
 	c = 0;
-	while (r[c])
+	while (s[c])
 	{
-		r[c] = f(c, s[c]);
+		r[c] = (*f)(c, s[c]);
 		c++;
 	}
+	r[c] = '\0';
 	return (r);
 }

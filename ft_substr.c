@@ -6,26 +6,55 @@
 /*   By: tiagoliv <tiagoliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 14:33:02 by tiagoliv          #+#    #+#             */
-/*   Updated: 2023/04/14 01:51:38 by tiagoliv         ###   ########.fr       */
+/*   Updated: 2023/05/18 19:58:01 by tiagoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>*/
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	c;
-	char	*r;
+	size_t			c;
+	char			*r;
+	unsigned int	l;
 
+	l = ft_strlen(s);
 	c = 0;
-	r = malloc((len - 1) * sizeof(char ));
-
+	if (start > l)
+		r = malloc(1);
+	else if (l - start < len)
+		r = malloc((l - start + 1) * sizeof(char));
+	else
+		r = malloc((len + 1) * sizeof(char));
 	if (r == NULL)
 		return (NULL);
-	while (s[c + start] && c < len - start)
+	if (start > l)
+		r[0] = '\0';
+	if (start > l)
+		return (r);
+	while (s[c + start] && c < len)
 	{
-		r[c] = s[c + start];
+		r[c] = s[start + c];
 		c++;
 	}
+	r[c] = '\0';
 	return (r);
 }
+/*int main()
+{
+	char * s = ft_substr("tripouille", 1,1);
+	printf("%s|\"r\"\n", s);
+	s = ft_substr("tripouille", 100, 1);
+	printf("%s|\"\"\n", s);
+	s = ft_substr("1", 42, 42000000);
+	printf("%s|\"\"\n", s);
+	s = ft_substr("0123456789", 9, 10);
+	printf("%s|\"9\"\n", s);
+	s = ft_substr("42", 0, 0);
+	printf("%s|\"\"\n", s);
+	s = ft_substr("BONJOUR LES HARICOTS !", 8, 14);
+	printf("%s|\"LES HARICOTS !\"\n", s);
+}*/

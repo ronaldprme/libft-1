@@ -6,46 +6,46 @@
 #    By: tiagoliv <tiagoliv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 13:28:54 by tiagoliv          #+#    #+#              #
-#    Updated: 2023/04/14 01:48:16 by tiagoliv         ###   ########.fr        #
+#    Updated: 2023/05/18 19:34:41 by tiagoliv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = ft_strlen.c ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c \
-	ft_memset.c ft_strlcat.c ft_strncmp.c ft_strnstr.c ft_strlcpy.c ft_toupper.c \
-	ft_tolower.c ft_memchr.c ft_strchr.c ft_strrchr.c ft_memcmp.c ft_memmove.c ft_memcpy.c ft_split.c \
-	ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c ft_itoa.c ft_strmapi.c ft_strtrim.c ft_striteri.c \
-	ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
-
-OBJS = $(SRCS:.c=.o)
-
-BONUS			=	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c\
-					ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c\
-					
-BONUS_OBJS		= $(BONUS:.c=.o)
+NAME = libft.a
+SOURCES = \
+	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
+	ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c \
+	ft_strlcpy.c ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c \
+	ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c ft_atoi.c \
+	ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c \
+	ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c \
+	ft_putendl_fd.c ft_putnbr_fd.c 
+EXTRAS = ft_strcpy.c
+BSOURCES = \
+	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
+	ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
+OBJECTS = $(SOURCES:.c=.o) $(EXTRAS:.c=.o)
+BOBJECTS = $(BSOURCES:.c=.o)
 
 CC = gcc
-RM = rm -rf
-CFLAGS = -Werror -Wextra -Wall 
-
-NAME = libft.a
+CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	@ar -rcs $(NAME) $(OBJS)
+$(NAME): $(OBJECTS)
+	$(AR) -r $@ $?
 
-$(OBJS): $(SRCS)
-	@$(CC) $(CFLAGS) -c $(SRCS)
+bonus: $(OBJECTS) $(BOBJECTS)
+	$(AR) -r $(NAME) $?
+
+%.o: %.c
+	$(CC) -c $(CFLAGS) $?
 
 clean:
-	@$(RM) $(OBJS) $(BONUS_OBJS)
+	rm -f $(OBJECTS) $(BOBJECTS)
 
-fclean:	clean
-	@$(RM) $(NAME)
+fclean: clean
+	rm -f $(NAME)
 
-re:	fclean $(NAME)
+re: fclean all
 
-bonus: $(OBJS) 
-		ar rcs $(NAME) $(OBJS) 
-
-.PHONY:			all clean fclean re bonus
+.PHONY: all bonus clean fclean re

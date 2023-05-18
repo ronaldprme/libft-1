@@ -6,7 +6,7 @@
 /*   By: tiagoliv <tiagoliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 14:32:29 by tiagoliv          #+#    #+#             */
-/*   Updated: 2023/04/13 23:08:04 by tiagoliv         ###   ########.fr       */
+/*   Updated: 2023/05/02 15:25:53 by tiagoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,15 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	size_t	d;
-	char	*str;
-	char	*sr;
+	size_t	i;
 
-	d = 0;
-	str = dest;
-	sr = (char *)src;
-	while (d < n)
+	if (!dest && !src)
+		return (0);
+	i = 0;
+	while (i < n)
 	{
-		str[d] = sr[d];
-		d++;
+		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+		i++;
 	}
-	return (str);
+	return (dest);
 }
