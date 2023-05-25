@@ -6,7 +6,7 @@
 /*   By: tiagoliv <tiagoliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 14:32:40 by tiagoliv          #+#    #+#             */
-/*   Updated: 2023/05/18 22:29:27 by tiagoliv         ###   ########.fr       */
+/*   Updated: 2023/05/19 00:25:03 by tiagoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,9 +89,9 @@ char	**ft_split(char const *s, char c)
 	return (r);
 }
 
-int main()
+/*int main()
 {
 	char **r = ft_split("hello!", ' ');
 	printf("|%s|\n", r[0]);
 	printf("|%s|\n", r[1]);
-}
+}*/
