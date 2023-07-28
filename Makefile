@@ -6,13 +6,12 @@
 #    By: tiagoliv <tiagoliv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 13:28:54 by tiagoliv          #+#    #+#              #
-#    Updated: 2023/07/28 20:06:04 by tiagoliv         ###   ########.fr        #
+#    Updated: 2023/07/28 21:27:31 by tiagoliv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 OBJ_FOLDER = obj/
-OUT_FOLDER = /
 
 IS_FOLDER = is/
 IS_FILES = ft_isalnum.c  ft_isalpha.c  ft_isascii.c  ft_isdigit.c  ft_isprint.c
@@ -27,8 +26,6 @@ STR_FOLDER = str/
 STR_FILES = ft_atoi.c   ft_strchr.c  ft_striteri.c  ft_strlcpy.c  ft_strncmp.c  ft_strtrim.c  ft_toupper.c \
 		ft_itoa.c   ft_strcpy.c  ft_strjoin.c   ft_strlen.c   ft_strnstr.c  ft_substr.c \
 		ft_split.c  ft_strdup.c  ft_strlcat.c   ft_strmapi.c  ft_strrchr.c  ft_tolower.c
-
-ALL_FILES = $(IS_FILES) $(MEM_FILES) $(PUT_FILES) $(STR_FILES)
 
 SOURCES = \
 	$(addprefix $(IS_FOLDER), $(IS_FILES)) \
@@ -48,7 +45,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
-	
+
 $(OBJ_FOLDER):
 	mkdir -p $(OBJ_FOLDER)
 
