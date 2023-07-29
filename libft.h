@@ -6,7 +6,7 @@
 /*   By: tiagoliv <tiagoliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 22:21:47 by tiagoliv          #+#    #+#             */
-/*   Updated: 2023/07/28 15:40:17 by tiagoliv         ###   ########.fr       */
+/*   Updated: 2023/07/29 01:28:35 by tiagoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include	<stdio.h>
 # include	<stdlib.h>
 # include	<unistd.h>
+# include	"../42-printf/ft_printf.h"
 
 typedef struct s_list
 {

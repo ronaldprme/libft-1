@@ -6,7 +6,7 @@
 #    By: tiagoliv <tiagoliv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 13:28:54 by tiagoliv          #+#    #+#              #
-#    Updated: 2023/07/29 01:11:23 by tiagoliv         ###   ########.fr        #
+#    Updated: 2023/07/29 01:31:04 by tiagoliv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,7 +59,6 @@ $(OBJ_FOLDER):
 $(PRINTF_FOLDER): $(OBJ_FOLDER) $(OBJECTS) $(BOBJECTS)
 	$(MAKE) -C $@ all clean
 	mv $(PRINTF_FOLDER)$(PRINTF_LIB_NAME) .
-	cp $(PRINTF_FOLDER)$(PRINTF_HEADER) .
 	$(AR) -x $(PRINTF_LIB_NAME)
 	$(AR) -r $(NAME) *.o $(addprefix $(OBJ_FOLDER), $(notdir $(OBJECTS)) $(notdir $(BOBJECTS)))
 
@@ -73,6 +72,12 @@ clean:
 fclean: clean
 	rm -f $(NAME) $(PRINTF_HEADER)
 	$(MAKE) -C $(PRINTF_FOLDER) fclean
+
+TEST_FILE = test.c
+TEST_OUT = test.out
+test: all
+	$(CC) $(CFLAGS) $(TEST_FILE) $(NAME) -o $(TEST_OUT)
+	./$(TEST_OUT)
 
 re: fclean all
 
