@@ -6,12 +6,16 @@
 #    By: tiagoliv <tiagoliv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 13:28:54 by tiagoliv          #+#    #+#              #
-#    Updated: 2023/07/28 21:27:31 by tiagoliv         ###   ########.fr        #
+#    Updated: 2023/07/29 01:11:23 by tiagoliv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 OBJ_FOLDER = obj/
+
+PRINTF_FOLDER = 42-printf/
+PRINTF_HEADER = ft_printf.h
+PRINTF_LIB_NAME = libftprintf.a
 
 IS_FOLDER = is/
 IS_FILES = ft_isalnum.c  ft_isalpha.c  ft_isascii.c  ft_isdigit.c  ft_isprint.c
@@ -44,26 +48,32 @@ BOBJECTS = $(BSOURCES:.c=.o)
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
-all: $(NAME)
+all: $(PRINTF_FOLDER) clean
 
 $(OBJ_FOLDER):
 	mkdir -p $(OBJ_FOLDER)
 
-$(NAME): $(OBJ_FOLDER) $(OBJECTS)
-	$(AR) -r $@ $(addprefix $(OBJ_FOLDER), $(notdir $(OBJECTS)))
+#$(NAME): $(OBJ_FOLDER) $(OBJECTS)
+#	$(AR) -r $@ $(addprefix $(OBJ_FOLDER), $(notdir $(OBJECTS)))
 
-bonus: $(OBJ_FOLDER) $(OBJECTS) $(BOBJECTS)
-	$(AR) -r $(NAME) $(addprefix $(OBJ_FOLDER), $(notdir $(OBJECTS)) $(notdir $(BOBJECTS)))
+$(PRINTF_FOLDER): $(OBJ_FOLDER) $(OBJECTS) $(BOBJECTS)
+	$(MAKE) -C $@ all clean
+	mv $(PRINTF_FOLDER)$(PRINTF_LIB_NAME) .
+	cp $(PRINTF_FOLDER)$(PRINTF_HEADER) .
+	$(AR) -x $(PRINTF_LIB_NAME)
+	$(AR) -r $(NAME) *.o $(addprefix $(OBJ_FOLDER), $(notdir $(OBJECTS)) $(notdir $(BOBJECTS)))
 
 %.o: %.c
 	$(CC) -c $(CFLAGS) $^ -o $(OBJ_FOLDER)$(notdir $(<:.c=.o))
 
 clean:
-	rm -rf $(OBJ_FOLDER)* $(OBJ_FOLDER)
+	rm -rf $(OBJ_FOLDER)* $(OBJ_FOLDER) *.o $(PRINTF_LIB_NAME)
+	$(MAKE) -C $(PRINTF_FOLDER) clean
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) $(PRINTF_HEADER)
+	$(MAKE) -C $(PRINTF_FOLDER) fclean
 
 re: fclean all
 
-.PHONY: all bonus clean fclean re
+.PHONY: all clean fclean re
