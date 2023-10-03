@@ -6,17 +6,18 @@
 /*   By: tiagoliv <tiagoliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 22:21:47 by tiagoliv          #+#    #+#             */
-/*   Updated: 2023/07/29 01:28:35 by tiagoliv         ###   ########.fr       */
+/*   Updated: 2023/10/03 15:13:49 by tiagoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include	<stdio.h>
-# include	<stdlib.h>
-# include	<unistd.h>
-# include	"42-printf/ft_printf.h"
+# include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include "42-printf/ft_printf.h"
+# include "gnl/get_next_line.h"
 
 typedef struct s_list
 {
