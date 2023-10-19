@@ -1,5 +1,5 @@
 [submodule "42-printf"]
-	path = 42-printf
+	path = printf
 	url = https://github.com/Tiago-0liveira/42-printf.git
 	branch = master
 [submodule "gnl"]
