@@ -13,7 +13,7 @@
 NAME = libft.a
 OBJ_FOLDER = obj/
 
-PRINTF_FOLDER = 42-printf/
+PRINTF_FOLDER = printf/
 PRINTF_HEADER = ft_printf.h
 GNL_FOLDER = gnl/
 PRINTF_LIB_NAME = libftprintf.a

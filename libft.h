@@ -16,7 +16,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include "42-printf/ft_printf.h"
+# include "printf/ft_printf.h"
 # include "gnl/get_next_line.h"
 
 typedef struct s_list
