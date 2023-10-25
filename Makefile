@@ -6,7 +6,7 @@
 #    By: tiagoliv <tiagoliv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 13:28:54 by tiagoliv          #+#    #+#              #
-#    Updated: 2023/10/03 15:11:03 by tiagoliv         ###   ########.fr        #
+#    Updated: 2023/10/25 17:09:41 by tiagoliv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,53 +33,45 @@ STR_FILES = ft_atoi.c   ft_strchr.c  ft_striteri.c  ft_strlcpy.c  ft_strncmp.c  
 		ft_split.c  ft_strdup.c  ft_strlcat.c   ft_strmapi.c  ft_strrchr.c  ft_tolower.c
 
 GNL_FILES = get_next_line.c get_next_line_utils.c
+
+PRINTF_FOLDER = printf/
+PRINTF_FILES = execute_flag.c ft_printf.c ft_putchar.c ft_puthexa.c ft_putnbr.c ft_putptr.c ft_putstr.c ft_putunsigned_nbr.c
+
+BONUS_FOLDER = lst/
+BONUS_FILES = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
+	ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
+
 SOURCES = \
 	$(addprefix $(IS_FOLDER), $(IS_FILES)) \
 	$(addprefix $(MEM_FOLDER), $(MEM_FILES)) \
 	$(addprefix $(PUT_FOLDER), $(PUT_FILES)) \
 	$(addprefix $(STR_FOLDER), $(STR_FILES)) \
-	$(addprefix $(GNL_FOLDER), $(GNL_FILES))
+	$(addprefix $(GNL_FOLDER), $(GNL_FILES)) \
+	$(addprefix $(PRINTF_FOLDER), $(PRINTF_FILES)) \
+	$(addprefix $(BONUS_FOLDER), $(BONUS_FILES)) 
 
-BONUS_FOLDER = lst/
-BONUS_FILES = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
-	ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
-BSOURCES = $(addprefix $(BONUS_FOLDER), $(BONUS_FILES))
-
-OBJECTS =  $(SOURCES:.c=.o)
-BOBJECTS = $(BSOURCES:.c=.o)
+OBJECTS = $(addprefix $(OBJ_FOLDER), $(SOURCES:.c=.o))
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-all: $(PRINTF_FOLDER)
+all: $(NAME)
 
 $(OBJ_FOLDER):
 	mkdir -p $(OBJ_FOLDER)
 
-#$(NAME): $(OBJ_FOLDER) $(OBJECTS)
-#	$(AR) -r $@ $(addprefix $(OBJ_FOLDER), $(notdir $(OBJECTS)))
+$(NAME): $(OBJ_FOLDER) $(OBJECTS)
+	ar rcs $(NAME) $(OBJECTS)
 
-$(PRINTF_FOLDER): $(OBJ_FOLDER) $(OBJECTS) $(BOBJECTS)
-	$(MAKE) -C $@ all clean
-	mv $(PRINTF_FOLDER)$(PRINTF_LIB_NAME) $(OBJ_FOLDER)
-	cd $(OBJ_FOLDER); $(AR) -x $(PRINTF_LIB_NAME); $(AR) -r ../$(NAME) *.o
-
-%.o: %.c
-	$(CC) -c $(CFLAGS) $^ -o $(OBJ_FOLDER)$(notdir $(<:.c=.o))
+$(OBJECTS): $(OBJ_FOLDER)%.o: $(SRC_FOLDER)%.c
+	@mkdir -p $(dir $@)
+	$(CC) -c $(CFLAGS) $< -o $@
 
 clean:
-	rm -rf $(OBJ_FOLDER)* $(OBJ_FOLDER) *.o $(PRINTF_LIB_NAME)
-	$(MAKE) -C $(PRINTF_FOLDER) clean
+	rm -rf $(OBJ_FOLDER)
 
 fclean: clean
-	rm -f $(NAME) $(PRINTF_HEADER)
-	$(MAKE) -C $(PRINTF_FOLDER) fclean
-
-TEST_FILE = test.c
-TEST_OUT = test.out
-test: all
-	$(CC) $(CFLAGS) $(TEST_FILE) -L. libft.a -o $(TEST_OUT)
-	./$(TEST_OUT)
+	rm -f $(NAME)
 
 re: fclean all
 
