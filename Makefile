@@ -6,7 +6,7 @@
 #    By: tiagoliv <tiagoliv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 13:28:54 by tiagoliv          #+#    #+#              #
-#    Updated: 2023/10/25 17:09:41 by tiagoliv         ###   ########.fr        #
+#    Updated: 2023/10/25 17:46:28 by tiagoliv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ STR_FILES = ft_atoi.c   ft_strchr.c  ft_striteri.c  ft_strlcpy.c  ft_strncmp.c  
 GNL_FILES = get_next_line.c get_next_line_utils.c
 
 PRINTF_FOLDER = printf/
-PRINTF_FILES = execute_flag.c ft_printf.c ft_putchar.c ft_puthexa.c ft_putnbr.c ft_putptr.c ft_putstr.c ft_putunsigned_nbr.c
+PRINTF_FILES = execute_flag.c ft_printf.c ft_printulong.c ft_putchar.c ft_puthexa.c ft_putnbr.c ft_putptr.c ft_putstr.c ft_putunsigned_nbr.c
 
 BONUS_FOLDER = lst/
 BONUS_FILES = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
