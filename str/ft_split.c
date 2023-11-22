@@ -6,7 +6,7 @@
 /*   By: tiagoliv <tiagoliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 14:32:40 by tiagoliv          #+#    #+#             */
-/*   Updated: 2023/07/28 15:53:43 by tiagoliv         ###   ########.fr       */
+/*   Updated: 2023/11/22 16:21:30 by tiagoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,19 @@ char	*nextsubstr(const char *s, char c, int start)
 	return (ss);
 }
 
-char	*mallocandstrcpy(char *ls, char **r, int j)
+void	*free_return(char **ss, int ntabs)
 {
-	r[j] = malloc(ft_strlen(ls) + 1);
-	if (r[j] == NULL)
-		return (NULL);
-	ft_strcpy(r[j], ls);
-	return (r[j]);
+	int	i;
+
+	i = 0;
+	while (i < ntabs)
+	{
+		if (ss[i])
+			free(ss[i]);
+		i++;
+	}
+	free(ss);
+	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
@@ -79,10 +85,10 @@ char	**ft_split(char const *s, char c)
 		while (s[l] && s[l] == c)
 			l++;
 		ls = nextsubstr(s, c, l);
+		if (!ls)
+			return (free_return(r, ntabs));
 		l += ft_strlen(ls) + 1;
-		r[j] = malloc(ft_strlen(ls) + 1);
-		ft_strcpy(r[j], ls);
-		free(ls);
+		r[j] = ls;
 		j++;
 	}
 	r[j] = NULL;
@@ -94,4 +100,5 @@ char	**ft_split(char const *s, char c)
 	char **r = ft_split("hello!", ' ');
 	printf("|%s|\n", r[0]);
 	printf("|%s|\n", r[1]);
+	free_return(r, 2);
 }*/
