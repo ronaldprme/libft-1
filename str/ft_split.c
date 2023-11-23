@@ -6,7 +6,7 @@
 /*   By: tiagoliv <tiagoliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 14:32:40 by tiagoliv          #+#    #+#             */
-/*   Updated: 2023/11/22 16:21:30 by tiagoliv         ###   ########.fr       */
+/*   Updated: 2023/11/23 18:01:49 by tiagoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,17 +51,13 @@ char	*nextsubstr(const char *s, char c, int start)
 	return (ss);
 }
 
-void	*free_return(char **ss, int ntabs)
+void	*free_return(char **ss)
 {
 	int	i;
 
 	i = 0;
-	while (i < ntabs)
-	{
-		if (ss[i])
-			free(ss[i]);
-		i++;
-	}
+	while (ss[i] != NULL)
+		free(ss[i++]);
 	free(ss);
 	return (NULL);
 }
@@ -86,7 +82,7 @@ char	**ft_split(char const *s, char c)
 			l++;
 		ls = nextsubstr(s, c, l);
 		if (!ls)
-			return (free_return(r, ntabs));
+			return (free_return(r));
 		l += ft_strlen(ls) + 1;
 		r[j] = ls;
 		j++;
