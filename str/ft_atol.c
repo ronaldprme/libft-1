@@ -6,7 +6,7 @@
 /*   By: tiagoliv <tiagoliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 18:46:46 by tiagoliv          #+#    #+#             */
-/*   Updated: 2023/11/23 18:47:08 by tiagoliv         ###   ########.fr       */
+/*   Updated: 2023/12/04 14:57:01 by tiagoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,3 @@ long	ft_atol(const char *nptr)
 	}
 	return (r * s);
 }
-
