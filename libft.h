@@ -6,7 +6,7 @@
 /*   By: tiagoliv <tiagoliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 22:21:47 by tiagoliv          #+#    #+#             */
-/*   Updated: 2023/11/23 18:48:12 by tiagoliv         ###   ########.fr       */
+/*   Updated: 2024/02/22 20:20:17 by tiagoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void*));
 
 // EXTRA FUNCTIONS
 size_t	ft_strcpy(char *dst, const char *src);
+size_t	ft_strncpy(char *dst, const char *src);
 
 #endif
