@@ -6,7 +6,7 @@
 #    By: tiagoliv <tiagoliv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 13:28:54 by tiagoliv          #+#    #+#              #
-#    Updated: 2024/02/22 20:18:25 by tiagoliv         ###   ########.fr        #
+#    Updated: 2024/02/23 14:42:17 by tiagoliv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,8 +29,11 @@ PUT_FILES = ft_putchar_fd.c  ft_putendl_fd.c  ft_putnbr_fd.c  ft_putstr_fd.c
 
 STR_FOLDER = str/
 STR_FILES = ft_atoi.c  ft_atol.c  ft_strchr.c  ft_striteri.c  ft_strlcpy.c  ft_strncmp.c  ft_strtrim.c  ft_toupper.c \
-		ft_itoa.c   ft_strcpy.c  ft_strncpy.c ft_strjoin.c   ft_strlen.c   ft_strnstr.c  ft_substr.c \
-		ft_split.c  ft_strdup.c  ft_strlcat.c   ft_strmapi.c  ft_strrchr.c  ft_tolower.c
+		ft_itoa.c  ft_strjoin.c  ft_strlen.c  ft_strnstr.c  ft_substr.c ft_split.c \
+		ft_strdup.c  ft_strlcat.c   ft_strmapi.c  ft_strrchr.c  ft_tolower.c
+
+EXTRA_FOLDER = extra/
+EXTRA_FILES = ft_strcpy.c ft_strncpy.c ft_strnjoin.c
 
 GNL_FILES = get_next_line.c get_next_line_utils.c
 
@@ -47,6 +50,7 @@ SOURCES = \
 	$(addprefix $(PUT_FOLDER), $(PUT_FILES)) \
 	$(addprefix $(STR_FOLDER), $(STR_FILES)) \
 	$(addprefix $(GNL_FOLDER), $(GNL_FILES)) \
+	$(addprefix $(EXTRA_FOLDER), $(EXTRA_FILES)) \
 	$(addprefix $(PRINTF_FOLDER), $(PRINTF_FILES)) \
 	$(addprefix $(BONUS_FOLDER), $(BONUS_FILES)) 
 
