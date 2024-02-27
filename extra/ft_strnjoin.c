@@ -6,7 +6,7 @@
 /*   By: tiagoliv <tiagoliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 14:25:01 by tiagoliv          #+#    #+#             */
-/*   Updated: 2024/02/23 15:14:03 by tiagoliv         ###   ########.fr       */
+/*   Updated: 2024/02/27 17:00:04 by tiagoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ char	*ft_strnjoin(size_t count, ...)
 	result[0] = '\0';
 	i = 0;
 	while (i < count)
-		ft_strlcat(result, ss[i++], len);
+		ft_strlcat(result, ss[i++], len + 1);
 	free(ss);
 	return (result);
 }
