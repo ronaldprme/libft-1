@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tiagoliv <tiagoliv@student.42.fr>          +#+  +:+       +#+         #
+#    By: rprocopi <mailto:rprocopi@student.42lis    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 13:28:54 by tiagoliv          #+#    #+#              #
-#    Updated: 2024/02/23 14:42:17 by tiagoliv         ###   ########.fr        #
+#    Updated: 2024/03/22 18:39:04 by rprocopi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,8 +49,8 @@ SOURCES = \
 	$(addprefix $(MEM_FOLDER), $(MEM_FILES)) \
 	$(addprefix $(PUT_FOLDER), $(PUT_FILES)) \
 	$(addprefix $(STR_FOLDER), $(STR_FILES)) \
-	$(addprefix $(GNL_FOLDER), $(GNL_FILES)) \
-	$(addprefix $(EXTRA_FOLDER), $(EXTRA_FILES)) \
+	$(addprefix $(GNL_FOLDER), $(GNL_FILES))
+	$(addprefix $(EXTRA_FOLDER), $(EXTRA_FILES))\
 	$(addprefix $(PRINTF_FOLDER), $(PRINTF_FILES)) \
 	$(addprefix $(BONUS_FOLDER), $(BONUS_FILES)) 
 

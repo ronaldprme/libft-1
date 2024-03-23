@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tiagoliv <tiagoliv@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rprocopi <mailto:rprocopi@student.42lis    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 22:21:47 by tiagoliv          #+#    #+#             */
-/*   Updated: 2024/02/23 15:02:34 by tiagoliv         ###   ########.fr       */
+/*   Updated: 2024/03/22 18:33:01 by rprocopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include "gnl/get_next_line.h"
-# include "printf/ft_printf.h"
+//# include "gnl/get_next_line.h"
+//# include "printf/ft_printf.h"
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
